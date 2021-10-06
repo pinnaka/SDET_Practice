@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int input_positive_integer=scan.nextInt();
+        if((input_positive_integer%2)!=0)
+            System.out.println("Weird");
+        else
+        {
+            if((input_positive_integer>=6) & (input_positive_integer<=20))
+                System.out.println("Weird");
+            else
+                System.out.println("Not Weird");
+        }
+    }
+}
