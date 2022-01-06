@@ -1,0 +1,22 @@
+def wrapper(f):
+    def fun(l):
+        # complete the function
+        new_phone_num_list=[]
+        for phone_num in l:
+            len_phone_num=len(phone_num)
+            if len_phone_num>10:
+                crct_phone_num="+91 "+phone_num[len_phone_num-10:len_phone_num-5]+" "+phone_num[len_phone_num-5:len_phone_num]
+                new_phone_num_list.append(crct_phone_num) 
+            else:
+                crct_phone_num="+91 "+phone_num[0:5]+" "+phone_num[5:10]
+                new_phone_num_list.append(crct_phone_num)   
+        f(new_phone_num_list )         
+    return fun
+
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l) 
